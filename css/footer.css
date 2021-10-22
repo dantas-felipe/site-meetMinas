@@ -35,7 +35,7 @@
 }
 
 .footer-icon__icon:hover{
-    color: var(--clr-mediu-green);
+    color: var(--clr-medium-green);
 }
 
 .date::after{
