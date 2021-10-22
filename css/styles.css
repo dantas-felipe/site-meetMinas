@@ -50,6 +50,7 @@ section:nth-child(odd){
 img{
 	max-width: 100%;
 	height: auto;
+	display: block;
 }
 
 .section__titulo{
