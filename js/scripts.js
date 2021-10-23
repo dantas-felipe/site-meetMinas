@@ -80,16 +80,23 @@ _elements.toggle.addEventListener("click", () => {
 });
 
 _elements.galleryItems.forEach(item => {
-	item.addEventListener
+	item.addEventListener("click", e=> {
+		const id = getImageId(e.target);
+		updateModal(id);
 
+		_elements.modal.style.display = "flex";
+	})
 });
 
 _elements.sliderThumbsImage.forEach(img => {
-
+	img.addEventListener('click', e =>{
+		const id = getImageId(e.target);
+		updateModal(id);
+	})
 });
 
 _elements.closeModalBtn.addEventListener("click", () => {
-
+	_elements.modal.style.display = 'none';
 });
 
 _elements.sliderNextButton.addEventListener("click", () => nextImage());
@@ -97,10 +104,23 @@ _elements.sliderNextButton.addEventListener("click", () => nextImage());
 _elements.sliderPrevButton.addEventListener("click", () => prevImage());
 
 const getImageId = (target) => {
+	const arrFromChildren = Array.from(target.parentNode.children);
+	const id = arrFromChildren.indexOf(target);
+
+	return id;
 
 }
 
 const updateModal = (imgId) => {
+	_elements.sliderImage.src = _gallery[imgId].img;
+	_elements.sliderImageNumber.innerHTML = (imgId + 1) + "/" + _gallery.length;
+	_elements.sliderImageDescription.innerHTML = _gallery[imgId].description;
+
+	_elements.sliderThumbsImage.forEach(img => {
+		img.classList.remove('slider-thumbs__img--active');
+	});
+
+	_elements.sliderThumbsImage[imgId].classList.add('slider-thumbs__img--active');
 
 }
 
