@@ -6,9 +6,7 @@ Site fictício para estudo e aprimoramento, utilizando mobile first.
 
 Para acessar o site, basta clicar no link abaixo
 
-```
 https://dantas-felipe.github.io/site-meetMinas/
-```
 
 ### Baixando o Projeto
 
